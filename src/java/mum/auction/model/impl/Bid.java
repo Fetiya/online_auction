@@ -6,16 +6,31 @@
 
 package mum.auction.model.impl;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
 /**
  *
  * @author Fetiya
  */
+
+@Entity
 public class Bid {
     
+    @Id
+    @GeneratedValue
     private int Id;
+    
+    @OneToOne(mappedBy = "bid",cascade = CascadeType.ALL)
     private Auction auction;
+    
+    @OneToOne(mappedBy = "bid",cascade = CascadeType.ALL)
     private User user;
-    private int offeredPrice;
+    
+    private double offeredPrice;
 
     public Bid() {
     }
@@ -42,7 +57,7 @@ public class Bid {
         this.user = user;
     }
 
-    public int getOfferedPrice() {
+    public double getOfferedPrice() {
         return offeredPrice;
     }
 
