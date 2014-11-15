@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package mum.auction.model;
+package mum.auction.model.impl;
 
 import java.util.Date;
 
