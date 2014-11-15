@@ -58,6 +58,10 @@ public class Auction {
     public void setMinimumPrice(double minimumPrice) {
         this.minimumPrice = minimumPrice;
     }
-    
-    
+//    
+//    public Auction(User user,Book book,Date stratDate,Date endDate, double minimumPrice){
+//        this.user = user;
+//        this.book = book;
+//        this.startDate = startDate;
+//    }
 }
