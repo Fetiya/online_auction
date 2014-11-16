@@ -6,14 +6,23 @@
 
 package mum.auction.controller;
 
+import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+import mum.auction.dao.impl.AuctionDAOImpl;
+import mum.auction.dao.intr.AuctionDAO;
 import mum.auction.model.impl.Auction;
 
 /**
  *
  * @author Fetiya
  */
-public class AuctionBean {
+
+@Named("auctionBn")
+@SessionScoped
+public class AuctionBean implements Serializable {
     
+    private AuctionDAO auctionDAO= new AuctionDAOImpl();
     private Auction auction;
 
     public Auction getAuction() {
@@ -24,5 +33,13 @@ public class AuctionBean {
         this.auction = auction;
     }
    
+    public void addAuction()
+    {
+       auctionDAO.addAuction(auction);
+    }
     
+    public void cancelAuction()
+    {
+        auctionDAO.removeAuction(auction);
+    }
 }

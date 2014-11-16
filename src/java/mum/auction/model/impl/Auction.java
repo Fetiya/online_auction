@@ -14,11 +14,20 @@ import java.util.Date;
  */
 public class Auction {
     private User user;
-//    private Book book;
+    private Book book;
     private Date startDate;
     private Date endDate;
     private double minimumPrice;
+    private String status;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
     public User getUser() {
         return user;
     }
@@ -27,13 +36,13 @@ public class Auction {
         this.user = user;
     }
 
-//    public Book getBook() {
-//        return book;
-//    }
-//
-//    public void setBook(Book book) {
-//        this.book = book;
-//    }
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
 
     public Date getStartDate() {
         return startDate;
