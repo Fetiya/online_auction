@@ -12,13 +12,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+
 /**
  *
  * @author Fetiya
  */
 
 @Entity
-public class Bid {
+public class Bid  {
     
     @Id
     @GeneratedValue
