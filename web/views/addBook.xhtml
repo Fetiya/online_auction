@@ -11,19 +11,47 @@
        
         <h:form>
             <h:panelGrid columns="2">
+                
                 #{msgs.bookTitle}
-                <h:inputText     id="title" value="#{bookBn.book.title} validator="#{user.validateName}"
-                       <f:ajax event="change" render="nameError"/>
-                <h:message id="nameError" for="name" style="color: red"/>
-                       
+                <h:inputText  id="title" value="#{bookBn.book.title}"
+                                 validator="#{bookBn.validateBookTitle}">
+                       <f:ajax event="change" render="titleError"/>
+                </h:inputText>       
+                <h:message id="titleError" for="title" style="color: red"/>
+                 
+                
                 #{msgs.bookDesc}
-                <h:inputTextarea id="desc" value="#{bookBn.book.desc}"/>
+                <h:inputTextarea id="desc" value="#{bookBn.book.desc}"
+                                 validator="#{bookBn.validateBookDescription}">
+                       <f:ajax event="change" render="descError"/>
+                </h:inputText>       
+                <h:message id="descError" for="desc" style="color: red"/>
+                
+     
                 #{msgs.bookAuth}
-                <h:inputTextarea id="auth" value="#{bookBn.book.author}"/>
+                <h:inputTextarea id="auth" value="#{bookBn.book.author}"
+                                 validator="#{bookBn.validateBookAuthor}">
+                       <f:ajax event="change" render="authError"/>
+                </h:inputText>       
+                <h:message id="authError" for="auth" style="color: red"/>
+                
+                
                 #{msgs.bookPub}
-                <h:inputTextarea id="pub" value="#{bookBn.book.publisher}"/>
+                <h:inputTextarea id="pub" value="#{bookBn.book.publisher}"
+                                 validator="#{bookBn.validateBookPublisher}">
+                       <f:ajax event="change" render="pubError"/>
+                </h:inputText>       
+                <h:message id="pubError" for="pub" style="color: red"/>
+                
+                
                 #{msgs.bookEdit}
-                <h:inputTextarea id="edition" value="#{bookBn.book.edition}"/>         
+                <h:inputTextarea id="edition" value="#{bookBn.book.edition}"
+                                 validator="#{bookBn.validateBookEdition}">
+                       <f:ajax event="change" render="editionError"/>
+                </h:inputText>       
+                <h:message id="editionError" for="edition" style="color: red"/>
+                
+                
             </h:panelGrid> 
             
             <p>
