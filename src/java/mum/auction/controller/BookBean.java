@@ -9,6 +9,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 import javax.inject.Named;
 import mum.auction.dao.impl.BookDAOImpl;
 import mum.auction.model.impl.Book;
@@ -55,6 +59,35 @@ public class BookBean implements Serializable{
          BookDAO bookDao = new BookDAOImpl();
          bookDao.addBook(book);
     }
+   
+    public void validateBookTitle(FacesContext fc, UIComponent c, Object value) {
+	   if (((String) value).equals(""))
+	      throw new ValidatorException(
+	         new FacesMessage("Please provide title"));
+   }
     
+    public void validateBookDescription(FacesContext fc, UIComponent c, Object value) {
+	   if (((String) value).equals(""))
+	      throw new ValidatorException(
+	         new FacesMessage("Please provide description"));
+   }
     
+    public void validateBookAuthor(FacesContext fc, UIComponent c, Object value) {
+	   if (((String) value).equals(""))
+	      throw new ValidatorException(
+	         new FacesMessage("Please provide author"));
+   }
+    
+    public void validateBookPublisher(FacesContext fc, UIComponent c, Object value) {
+	   if (((String) value).equals(""))
+	      throw new ValidatorException(
+	         new FacesMessage("Please provide publisher"));
+   }
+    
+    public void validateBookEdition(FacesContext fc, UIComponent c, Object value) {
+	   if (((String) value).equals(""))
+	      throw new ValidatorException(
+	         new FacesMessage("Please provide edition"));
+   }
+   
 }
