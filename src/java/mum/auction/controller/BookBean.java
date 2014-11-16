@@ -6,6 +6,9 @@
 package mum.auction.controller;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Named;
 import mum.auction.model.impl.Book;
 
@@ -15,9 +18,11 @@ import mum.auction.model.impl.Book;
  */
 
 @Named("book")
+@SessionScoped
 public class BookBean implements Serializable{
     
     private Book book;
+    private List<Book> books = new ArrayList<Book>();
     
     public Book getBook()
     {
@@ -28,6 +33,22 @@ public class BookBean implements Serializable{
     {
         this.book = book;
     }
+
+    /**
+     * @return the books
+     */
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    /**
+     * @param books the books to set
+     */
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+    
+    
     
     
 }
