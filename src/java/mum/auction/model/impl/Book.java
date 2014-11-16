@@ -8,6 +8,7 @@ package mum.auction.model.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  *
  * @author Komal
@@ -121,6 +122,5 @@ public class Book {
     public void setAuctionList(List<Auction> auctionList) {
         this.auctionList = auctionList;
     }
-    
-    
+       
 }
