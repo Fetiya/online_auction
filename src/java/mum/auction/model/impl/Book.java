@@ -5,6 +5,9 @@
  */
 package mum.auction.model.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Komal
@@ -17,7 +20,7 @@ public class Book {
     private String author;
     private String publisher;
     private String edition;
-//    private List<Auction> auctionList = new ArrayList<Auction>();
+    private List<Auction> auctionList = new ArrayList<Auction>();
     
     
     public Book()
@@ -103,6 +106,20 @@ public class Book {
      */
     public void setEdition(String edition) {
         this.edition = edition;
+    }
+
+    /**
+     * @return the auctionList
+     */
+    public List<Auction> getAuctionList() {
+        return auctionList;
+    }
+
+    /**
+     * @param auctionList the auctionList to set
+     */
+    public void setAuctionList(List<Auction> auctionList) {
+        this.auctionList = auctionList;
     }
     
     
