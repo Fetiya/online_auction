@@ -10,14 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import mum.auction.dao.impl.BookDAOImpl;
 import mum.auction.model.impl.Book;
+import mum.auction.dao.intr.BookDAO;
 
 /**
  *
  * @author Komal
  */
 
-@Named("book")
+@Named("bookBn")
 @SessionScoped
 public class BookBean implements Serializable{
     
@@ -48,7 +50,11 @@ public class BookBean implements Serializable{
         this.books = books;
     }
     
-    
+    public void addBook()
+    {
+         BookDAO bookDao = new BookDAOImpl();
+         bookDao.addBook(book);
+    }
     
     
 }
