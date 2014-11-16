@@ -41,6 +41,6 @@ public class BidBean implements Serializable {
         this.bids = bids;
     }
    
-   
+  
     
 }
