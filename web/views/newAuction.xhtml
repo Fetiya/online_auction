@@ -1,4 +1,4 @@
-<?xml version='1.0' encodin'UTF-8' ?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -9,19 +9,21 @@
     <h:body>
         <h:form>
 
-            <h:panelGrid columns="2" cellpadding="5">
-                <p:outputLabel value="Simple:" for="acSimple" />
-                <p:autoComplete id="acSimple" value="#{autoCompleteView.txt1}" completeMethod="#{autoCompleteView.completeText}" />
 
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel value="Book Title" for="bookTitle" />
+                <p:autoComplete id="bookTitle" value="#{auctionBn.auction.book.title}" completeMethod="#{auctionBn.completeTitle}" />
+                <h:outputLabel  for="startDate" value="#{msgs.auctionStartDate}" />
+                <h:inputText id="startDate" value="#{auctionBn.auction.startDate}"></h:inputText>
+                <h:outputLabel  for="endDate" value="#{msgs.auctionEndDate}" />
+                <h:inputText value="#{auctionBn.auction.endDate}"></h:inputText>
+                <h:outputLabel for="price" value="#{msgs.minimumBid}" />
+                <h:inputText  id="price" value="#{auctionBn.auction.minimumPrice}"></h:inputText>
             </h:panelGrid>
 
-            <h:inputText value="#{auctionBn.auction.startDate}"></h:inputText>
-            <h:inputText value="#{auctionBn.auction.endDate}"></h:inputText>
-            <h:inputText value="#{auctionBn.auction.minimumPrice}"></h:inputText>
             <h:commandButton action="#{auctionBn.addAuction()}"
-                             value ="{msgs.addAuction}"/>
+                             value ="#{msgs.addAuction}"/>
         </h:form>
-
     </h:body>
 </html>
 
