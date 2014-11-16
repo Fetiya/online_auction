@@ -8,7 +8,7 @@ package mum.auction.controller;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import mum.auction.model.impl.Book;
 
